@@ -51,32 +51,6 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
-//SHARE MODAL JS
-const shareNotify = document.querySelector(".popup-content-share");
-const modalParentshare = document.querySelector(".popup-share");
-const overlayshare = document.querySelector(".overlay-share");
-const btnCloseModalshare = document.querySelector(".close-modal-share");
-const btnsOpenModalshare = document.querySelectorAll(".share");
-
-const toggleModalshare = function () {
-  shareNotify.classList.toggle("hidden");
-  overlayshare.classList.toggle("hidden");
-  modalParentshare.classList.toggle("hidden");
-};
-
-for (let i = 0; i < btnsOpenModalshare.length; i++)
-  btnsOpenModalshare[i].addEventListener("click", toggleModalshare);
-
-btnCloseModalshare.addEventListener("click", toggleModalshare);
-overlayshare.addEventListener("click", toggleModalshare);
-
-//Handling and escape keypress
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-    toggleModalshare();
-  }
-});
-
 const notifArray = [
   {
     item: `<div class="notification-container" id="toggle-notif">
@@ -248,4 +222,11 @@ console.log(accountList);
 accountDrop.addEventListener("click", function () {
   console.log("clicked");
   accountList.classList.toggle("account-list-show");
+});
+
+const myModal = document.getElementById("myModal");
+const myInput = document.getElementById("myInput");
+
+myModal.addEventListener("shown.bs.modal", () => {
+  myInput.focus();
 });
