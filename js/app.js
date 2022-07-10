@@ -18,10 +18,17 @@ for (let i = 0; i < add.length; i++) {
   });
 }
 
-for (let i = 0; i < book.length; i++)
+////BOOKMARK COLOR
+for (let i = 0; i < book.length; i++) {
+  book[i].style.color = "white";
   book[i].addEventListener("click", function () {
-    book[i].style.color = "black";
+    if (book[i].style.color === "white") {
+      book[i].style.color = "black";
+    } else {
+      book[i].style.color = "white";
+    }
   });
+}
 
 function rotateChevron() {
   document.querySelector(".fa-chevron-down").style.transform = "rotate(180deg)";
@@ -224,9 +231,15 @@ accountDrop.addEventListener("click", function () {
   accountList.classList.toggle("account-list-show");
 });
 
-const myModal = document.getElementById("myModal");
-const myInput = document.getElementById("myInput");
+//input function//
 
-myModal.addEventListener("shown.bs.modal", () => {
-  myInput.focus();
-});
+const button = document.querySelector(".trending-button");
+const input = document.querySelector(".trending-input");
+
+input.value = "Kodeblog.com/Trending/Figma_new_features";
+function copy() {
+  const copyText = input.value;
+  navigator.clipboard.writeText(copyText);
+}
+
+button.addEventListener("click", copy);
