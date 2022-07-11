@@ -64,7 +64,7 @@ const notifArray = [
             <div class="row info cleeck my-2 w-100 mx-auto align-items-center py-1 rounded-2" id="notclick">
               <div class="col-2 m-0 bg-transparent">
                 <div class="card border-0 bg-transparent">
-                  <img src="img/landing-page-image/logo-2.png" alt="">
+                  <img src="img/trending-page-image/logo-2.png" alt="">
                 </div>
               </div>
               <div class="col-8 m-0 bg-transparent">

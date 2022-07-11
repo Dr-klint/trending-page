@@ -6,6 +6,19 @@
   /* border: 1px solid red; */
 }
 
+input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(black, 0.1) !important;
+  border-bottom: 2px solid blue !important;
+}
+
+.custom-button:focus {
+  outline: none !important;
+  border: 0 solid transparent !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
 :root {
   --primary: #0d6efd;
   --secondary: #669e00;

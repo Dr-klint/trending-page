@@ -7,13 +7,26 @@ var swiper = new Swiper(".mySwiper", {
   },
   pagination: {
     el: ".swiper-pagination",
+    // type: "custom",
     clickable: true,
+    // renderCustom: function (swiper, current, total) {
+    //   return ("0" + current).slice(-2) + " of " + ("0" + total).slice(-2);
+    // },
     renderBullet: function (index, className) {
-      // return (
-      //   '<i class="' + className + " page" + index + '">' + (index + 1) + "</i>"
-      // );
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  direction: "horizontal",
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 0,
+  mousewheel: true,
+  renderCustom: function (swiper, current, total) {
+    return current + " of " + total;
   },
   breakpoints: {
     320: {
